@@ -1,0 +1,85 @@
+// Modal Component
+
+
+
+
+//  Dependencies:
+//    Settings.Default
+
+
+
+
+// Options
+
+$iota-modal                     : true;
+$iota-modal-padding             : 20px !default;
+$iota-modal-background          : #FFFFFF !default;
+$iota-modal-backdrop-background : rgba(0, 0, 0, 0.5) !default;
+
+
+
+
+.is-modal-open {
+  overflow: hidden;
+}
+
+
+.#{$iota-component-namespace}modal-backdrop {
+  position: fixed;
+  z-index: 9999;
+  top:    -5000px;
+  right:  -5000px;
+  bottom: -5000px;
+  left:   -5000px;
+  display: none;
+  background: $iota-modal-backdrop-background;
+}
+
+
+.#{$iota-component-namespace}modal {
+  position: fixed;
+  display: none;
+  padding: $iota-modal-padding;
+  top:    0;
+  right:  0;
+  bottom: 0;
+  left:   0;
+  overflow: auto;
+  text-align: center;
+  z-index: 10000;
+
+  -webkit-overflow-scrolling: touch;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.#{$iota-component-namespace}modal.is-active {
+  display: block;
+}
+
+.#{$iota-component-namespace}modal:after {
+  display: inline-block;
+  height: 100%;
+  margin-left: -0.05em;
+  content: "";
+  vertical-align: middle;
+}
+
+
+  .#{$iota-component-namespace}modal__dialog {
+    position: relative;
+    display: inline-block;
+    padding: $iota-modal-padding;
+    max-width: 700px;
+    width: 100%;
+    background: $iota-modal-background;
+    vertical-align: middle;
+
+    -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+              -moz-text-size-adjust: 100%;
+               -ms-text-size-adjust: 100%;
+                   text-size-adjust: 100%;
+           -webkit-box-sizing: border-box;
+                   box-sizing: border-box;
+  }
