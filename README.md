@@ -6,27 +6,27 @@ The modal component creates a modal window with the minimum cosmetics.
 ### Installation ###
 
 ```
-npm install --save iotacss-modal
+npm install --save iotacss-components-modal
 ```
-
-
-### Dependencies ###
-
-* [Settings.Default](https://github.com/iotacss/settings.default)
 
 
 ### Options ###
 
-```
-$iota-modal-background          : #FFFFFF !default;
-$iota-modal-padding             : 20px !default;
-$iota-modal-backdrop-background : rgba(0, 0, 0, 0.5) !default;
+```sass
+$iota-component-modal-namespace         : 'modal' !default;
+$iota-component-modal-dialog-name       : 'dialog' !default;
+$iota-component-modal-open-name         : 'is-modal-open' !default;
+$iota-component-modal-active-name       : 'is-active' !default
+
+$iota-component-modal-padding           : $iota-global-gutter-default !default;
+$iota-component-modal-background        : rgba(0, 0, 0, 0.5) !default;
+$iota-component-modal-dialog-background : rgb(255, 255, 255) !default;
 ```
 
 
 ### How to use it ###
 
-```
+```css
 <body class="is-modal-open">
 
   <div class="c-modal">
@@ -38,8 +38,6 @@ $iota-modal-backdrop-background : rgba(0, 0, 0, 0.5) !default;
     </div>
 
   </div>
-
-  <div class="c-modal-backdrop"></div>
 
 </body>
 ```

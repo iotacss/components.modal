@@ -3,61 +3,66 @@
 
 
 
-//  Dependencies:
-//    Settings.Default
-
-
-
-
 // Options
 
-$iota-modal                     : true;
-$iota-modal-padding             : 20px !default;
-$iota-modal-background          : #FFFFFF !default;
-$iota-modal-backdrop-background : rgba(0, 0, 0, 0.5) !default;
+$iota-components-modal                   : true;
+
+$iota-components-modal-namespace         : 'modal' !default;
+$iota-components-modal-dialog-name       : 'dialog' !default;
+$iota-components-modal-open-name         : 'is-modal-open' !default;
+$iota-components-modal-active-name       : 'is-active' !default
+
+$iota-components-modal-padding           : $iota-global-gutter-default !default;
+$iota-components-modal-background        : rgba(0, 0, 0, 0.5) !default;
+$iota-components-modal-dialog-background : rgb(255, 255, 255) !default;
 
 
 
 
-.is-modal-open {
+// Helper Local Variables
+
+$iota-components-modal-var-modal         : $iota-global-components-namespace + $iota-components-modal-namespace;
+$iota-components-modal-var-modal-active  : $iota-components-modal-var-modal + $iota-components-modal-active-name;
+$iota-components-modal-var-modal-dialog  : $iota-components-modal-var-modal + '__' + $iota-components-modal-dialog-name;
+
+
+
+
+// Modal Component
+
+.#{$iota-components-modal-open-name} {
+  position: fixed;
+  top:  0;
+  left: 0;
+  width:  100%;
+  height: 100%;
   overflow: hidden;
 }
 
 
-.#{$iota-component-namespace}modal-backdrop {
+.#{$iota-components-modal-var-modal} {
   position: fixed;
-  z-index: 9999;
-  top:    -5000px;
-  right:  -5000px;
-  bottom: -5000px;
-  left:   -5000px;
-  display: none;
-  background: $iota-modal-backdrop-background;
-}
-
-
-.#{$iota-component-namespace}modal {
-  position: fixed;
-  display: none;
-  padding: $iota-modal-padding;
+  visibility: hidden;
   top:    0;
   right:  0;
   bottom: 0;
   left:   0;
   overflow: auto;
   text-align: center;
+  opacity: 0;
   z-index: 10000;
+  background: $iota-components-modal-background;
 
   -webkit-overflow-scrolling: touch;
-  -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
 
-.#{$iota-component-namespace}modal.is-active {
-  display: block;
+.#{$iota-components-modal-var-modal-active} {
+  visibility: visible;
+  opacity: 1;
 }
 
-.#{$iota-component-namespace}modal:after {
+.#{$iota-components-modal-var-modal}:after {
   display: inline-block;
   height: 100%;
   margin-left: -0.05em;
@@ -66,20 +71,15 @@ $iota-modal-backdrop-background : rgba(0, 0, 0, 0.5) !default;
 }
 
 
-  .#{$iota-component-namespace}modal__dialog {
+  .#{$iota-components-modal-var-modal-dialog} {
     position: relative;
     display: inline-block;
-    padding: $iota-modal-padding;
+    padding: $iota-components-modal-padding;
     max-width: 700px;
     width: 100%;
-    background: $iota-modal-background;
+    background: $iota-components-modal-dialog-background;
     vertical-align: middle;
-
-    -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
-              -moz-text-size-adjust: 100%;
-               -ms-text-size-adjust: 100%;
-                   text-size-adjust: 100%;
-           -webkit-box-sizing: border-box;
-                   box-sizing: border-box;
+    transform: translate3d(0,0,0);
+    text-size-adjust: 100%;
+    box-sizing: border-box;
   }

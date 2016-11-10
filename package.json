@@ -1,6 +1,6 @@
 {
-  "name": "iotacss-modal",
-  "version": "0.1.0",
+  "name": "iotacss-components-modal",
+  "version": "1.0.0",
   "description": "Modal component for iotaCSS",
   "main": "_components.modal.scss",
   "repository": {
@@ -10,11 +10,9 @@
   "keywords": [
     "iotacss",
     "css",
+    "sass",
     "bem",
     "oocss"
   ],
-  "dependencies": {
-    "iotacss-default": "0.1.0"
-  },
   "author": "Dimitris Psaropoulos <info@harby.me>"
 }
