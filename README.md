@@ -13,14 +13,14 @@ npm install --save iotacss-components-modal
 ### Options ###
 
 ```sass
-$iota-component-modal-namespace         : 'modal' !default;
-$iota-component-modal-dialog-name       : 'dialog' !default;
-$iota-component-modal-open-name         : 'is-modal-open' !default;
-$iota-component-modal-active-name       : 'is-active' !default
+$iota-components-modal-namespace         : 'modal' !default;
+$iota-components-modal-dialog-name       : 'dialog' !default;
+$iota-components-modal-open-name         : 'is-modal-open' !default;
+$iota-components-modal-active-name       : 'is-active' !default
 
-$iota-component-modal-padding           : $iota-global-gutter-default !default;
-$iota-component-modal-background        : rgba(0, 0, 0, 0.5) !default;
-$iota-component-modal-dialog-background : rgb(255, 255, 255) !default;
+$iota-components-modal-padding           : $iota-global-gutter-default !default;
+$iota-components-modal-background        : rgba(0, 0, 0, 0.5) !default;
+$iota-components-modal-dialog-background : rgb(255, 255, 255) !default;
 ```
 
 
